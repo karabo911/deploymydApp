@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "student-registration-a4fb0": {
+      "hosting": {
+        "database1": [
+          "student-registration-a4fb0"
+        ]
+      }
+    }
+  }
+}

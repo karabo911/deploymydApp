@@ -1,0 +1,70 @@
+<div class="wrapper">
+
+
+  <nav>
+         
+        <img src="../assets/images/logo.png" alt="logo">
+  
+        <ul>
+          <li><a href="H">HOME</a></li>
+          <li><a href="H">ABOUT</a></li>
+          
+          <li> <a href="H">CONTACTS</a></li>
+        </ul>
+   </nav>
+  
+
+  
+   </div>
+
+<div class="students">
+  <h1>STUDENTS DETAILS</h1>
+  <h4>ENTER DETAILS AS FOLLOWS:</h4>
+  <ul>
+    <li>
+      Name
+    </li>
+    <li>
+      Surname
+    </li>
+    <li>
+      Course
+    </li>
+    <li>
+      Contacts
+    </li>
+    <li>
+      Address
+    </li>
+  </ul>
+
+  <H5>CLICK ON THE USER YOU WISH TO DELETE</H5>
+</div>
+
+<div class="addusers">
+  <form (ngSubmit)="AddUsers(UserData)" #UserData="ngForm">
+    <input name="name" ngModel #name="ngModel">
+    <input name="surname" ngModel #surname="ngModel">
+    <input name="course" ngModel #course="ngModel">
+    <input name="contact" ngModel #contact="ngModel">
+    <input name="address" ngModel #address="ngModel">
+    <button type="submit">Add User</button>
+  </form>
+</div>
+
+<h4>List of Pupils</h4>
+
+<ul>
+  <li *ngFor="let item of persons">
+    <p (click)="deleteUser(item.payload.doc.id)">{{ item.payload.doc.data().name }}  {{ item.payload.doc.data().surname }} <br> {{ item.payload.doc.data().course }} <br> {{ item.payload.doc.data().contact }} <br> {{ item.payload.doc.data().address}}</p>
+
+  </li>
+</ul>
+
+
+<!--<ul>
+  <li *ngFor="let item of persons">
+    {{ item.name }} 
+
+  </li>
+</ul>-->
